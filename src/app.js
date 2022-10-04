@@ -1,10 +1,20 @@
-import express from "express";
-import "dotenv/config";
+import express from "express"
+import "dotenv/config"
 
-const app = express();
+import { startDatabase } from "./database"
+import categoriesRouter from "./routes/categories.routes"
 
-app.use(express.json());
+const app = express()
+app.use(express.json())
 
-export default app.listen(3333, () => {
-  console.log("Server running");
-});
+app.use("/categories", categoriesRouter)
+
+const PORT = process.env.PORT || 3333
+console.log(PORT)
+
+app.listen(PORT, () => {
+  console.log(`server is running at port ${PORT}`)
+  startDatabase()
+})
+
+export default app
