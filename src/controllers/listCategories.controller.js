@@ -7,7 +7,7 @@ const listCategoriesController = async (request, response) => {
     return response.json(categories)
   } catch (error) {
     return response.status(400).json({
-      message: error.message
+      message: error.message,
     })
   }
 }
