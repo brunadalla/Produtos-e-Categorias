@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "./src/app.js",
   "license": "MIT",
+  "type": "module",
   "scripts": {
+    "start": "node .",
     "dev": "nodemon ./src/app.js",
     "test": "cross-env NODE_ENV=test jest"
   },
